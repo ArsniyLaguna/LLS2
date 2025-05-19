@@ -16,7 +16,7 @@ void integral_test_2() {
   double a = 2;
   double b = 10;
   int n = 300000;
-  
+
   double result = integral_trapez(a, b, n, function);
   double expect = 0.42292469;
   assert(fabs(result - expect) <= 1e-6);
@@ -26,7 +26,7 @@ void integral_test_3() {
   double a = 1;
   double b = 20;
   int n = 100000;
-  
+
   double result = integral_trapez(a, b, n, function);
   double expect = 0.13222024;
   assert(fabs(result - expect) <= 1e-6);
