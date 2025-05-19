@@ -4,7 +4,7 @@ clear:
 fmt:
 	find . -type f \( -name "*.c" -o -name "*.h" \) -exec clang-format -style=LLVM -i {} +
 
-check_fmt:
+cFmt:
 	find . -type f \( -name "*.c" -o -name "*.h" \) -exec clang-format -style=LLVM --dry-run --Werror {} +
 
 test: test_list
@@ -21,4 +21,3 @@ test_list.o: test_list.c list.h
 test_list: test_list.o list.a
 	gcc -g -o test_list test_list.o list.a
 
-	
