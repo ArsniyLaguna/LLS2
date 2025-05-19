@@ -3,9 +3,9 @@
 
 double function(double x) { return sin(x); }
 void integral_test_1() {
-  double a = 0;    // нижний предел Интеграла
-  double b = 10;   // верхний предел интеграла
-  int n = 10000; // количество разбиений на отрезке
+  double a = 0;
+  double b = 10;
+  int n = 10000;
 
   double result = integral_trapez(a, b, n, function);
   double expect = 1.8390715;
