@@ -1,12 +1,11 @@
-
-clear: 
+clear:
 	rm -rf *.o *.a *_test
 
-fmt: 
-	clang-format -style=LLVM -i `find -regex ".+\.[ch]"`
+fmt:
+	find . -type f \( -name "*.c" -o -name "*.h" \) -exec clang-format -style=LLVM -i {} +
 
 check_fmt:
-	clang-format -style=LLVM -i `find -regex ".+\.[ch]"` --dry-run --Werror
+	find . -type f \( -name "*.c" -o -name "*.h" \) -exec clang-format -style=LLVM --dry-run --Werror {} +
 
 test: test_list
 
@@ -20,5 +19,6 @@ test_list.o: test_list.c list.h
 	gcc -g -c test_list.c -o test_list.o
 
 test_list: test_list.o list.a
-	gcc -g -o test_list test_list.o list.a 
+	gcc -g -o test_list test_list.o list.a
 
+	
