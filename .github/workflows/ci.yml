@@ -11,6 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: format
+        run: make fmt
+
       - name: checkFormat
         run: make cFmt
+
+      - name: buildandtest
+        run: make test
 
