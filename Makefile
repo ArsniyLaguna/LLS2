@@ -17,10 +17,7 @@ integral_test.o: integral_test.c integral.h
 	gcc -g -c integral_test.c -o integral_test.o
 
 integral_test: integral_test.o integral.a
-	gcc -g -o integral_test integral_test.o integral.a -lm
-
-test: integral_test
-	./integral_test
+	gcc -g -o integral_test integral_test.o integral.a -lm	
 
 roots.o: roots.c roots.h
 	gcc -g -c roots.c -o roots.o
@@ -33,12 +30,6 @@ roots_test.o: roots_test.c roots.h
 
 roots_test: roots_test.o roots.a
 	gcc -g -o roots_test roots_test.o roots.a  -lm
-
-
-test: roots_test
-	./roots_test
-
-test: test_list
 
 list.o: list.c list.h
 	gcc -g -c list.c -o list.o
@@ -67,3 +58,6 @@ stack_test: stack_test.o stack.a
 
 test: stack_test
 	./stack_test
+	./roots_test
+	./integral_test
+	./test_list
