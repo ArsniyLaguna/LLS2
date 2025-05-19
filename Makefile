@@ -4,9 +4,9 @@ clear:
 fmt: 
 	clang-format -style=LLVM -i `find -regex ".+\.[ch]"`
 
-check_fmt:
+cFmt:
 	clang-format -style=LLVM -i `find -regex ".+\.[ch]"` --dry-run --Werror
-	
+
 test: test_list
 
 list.o: list.c list.h
