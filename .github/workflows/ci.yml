@@ -15,5 +15,5 @@ jobs:
         run: make cFmt
 
       - name: buildandtest
-        run: make test
+        run: make test_roots
         
