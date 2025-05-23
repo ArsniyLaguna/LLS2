@@ -40,7 +40,7 @@ list.a: list.o
 test_list.o: test_list.c list.h
 	gcc -g -c test_list.c -o test_list.o
 
-test_list: test_list.o list.a
+list_test: test_list.o list.a
 	gcc -g -o test_list test_list.o list.a 
 
 stack.o: stack.c stack.h
@@ -54,6 +54,18 @@ stack_test.o: stack_test.c stack.h
 
 stack_test: stack_test.o stack.a
 	gcc -g -o stack_test stack_test.o stack.a 
+
+test_roots:roots_test
+	./roots_test
+
+test_integral:integral_test
+	./integral_test
+
+test_list: list_test
+	./test_list
+
+test_stack: stack_test
+	./stack_test
 
 test: roots_test integral_test test_list stack_test
 	./roots_test
