@@ -28,7 +28,7 @@ roots.a: roots.o
 roots_test.o: roots_test.c roots.h
 	gcc -g -c roots_test.c -o roots_test.o
 
-roots_test: roots_test.o roots.a
+roots_test: roots_test.o roots.a roots.o
 	gcc -g -o roots_test roots_test.o roots.a  -lm
 
 list.o: list.c list.h
@@ -55,9 +55,8 @@ stack_test.o: stack_test.c stack.h
 stack_test: stack_test.o stack.a
 	gcc -g -o stack_test stack_test.o stack.a 
 
-
-test: stack_test
-	./stack_test
+test: roots_test integral_test test_list stack_test
 	./roots_test
+	./stack_test
 	./integral_test
 	./test_list
