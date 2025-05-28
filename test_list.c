@@ -35,8 +35,6 @@ void testLinkedList() {
   assert(getSize(list) == 0);
 
   freeLinkedList(list);
-
-  printf("All tests passed!\n");
 }
 
 int main() {
