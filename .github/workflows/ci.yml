@@ -13,4 +13,7 @@ jobs:
 
       - name: checkFormat
         run: make cFmt
+
+        - name: buildandtest
+        run: test_intergal
         
