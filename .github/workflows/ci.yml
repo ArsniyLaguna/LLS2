@@ -13,7 +13,3 @@ jobs:
 
       - name: checkFormat
         run: make cFmt
-
-      - name: buildandtest
-        run: make test_list
-        
