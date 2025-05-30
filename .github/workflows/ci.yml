@@ -15,5 +15,5 @@ jobs:
         run: make cFmt
 
       - name: buildandtest
-        run: list_test
+        run: test_list
         
