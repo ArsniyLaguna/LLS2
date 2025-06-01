@@ -1,18 +1,19 @@
 #include <math.h>
 #include <stdio.h>
 
-void solveQuadratic(double a, double b, double c, double roots[2], int *root_count, double epsilon) {
+void solveQuadratic(double a, double b, double c, double roots[2],
+                    int *root_count, double epsilon) {
   if (fabs(a) < epsilon) {
     *root_count = 0;
     return;
   }
   double discriminant = (b * b) - 4 * a * c;
-  if (fabs(0-discriminant) < epsilon){
+  if (fabs(0 - discriminant) < epsilon) {
     discriminant = 0;
   }
-  if (discriminant<-epsilon){
+  if (discriminant < -epsilon) {
     *root_count = 0;
-  }else if(discriminant > 0) {
+  } else if (discriminant > 0) {
     if (a == 1) {
       if (b > 0) {
         roots[0] = (-b - sqrt(discriminant)) / 2;
