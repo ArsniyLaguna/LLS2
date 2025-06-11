@@ -14,5 +14,5 @@ jobs:
       - name: checkFormat
         run: make cFmt
       - name: buildandtest
-        run: make roots_test
+        run: make test_roots
         
